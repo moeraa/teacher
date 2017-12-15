@@ -23,7 +23,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Long createUser(User user) {
         try {
-            userDao.insertUser(user);
+           Long id=userDao.insertUser(user);
+            logger.info("create user..."+id);
         } catch (Exception e) {
             e.printStackTrace();
         }

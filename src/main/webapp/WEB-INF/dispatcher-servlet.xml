@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
+       default-lazy-init="true">
+
+	<context:property-placeholder location="classpath:teacher.properties" file-encoding="UTF-8" />
+    <!--设置启动时自动化扫描改包下的所有Bean-->
+    <context:annotation-config />
+    <context:component-scan base-package="com.teacher">
+    	<context:exclude-filter type="regex" expression="com\.teacher.*" />
+    </context:component-scan>
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <!--spring 注解配置定时任务-->
+    <task:annotation-driven/>
+    <!--  在使用SpringMvc的时候，配置文件中我们经常看到 annotation-driven 这样的注解，其含义就是支持注解，一般根据前缀 tx、mvc 等也能很直白的理解出来分别的作用。<tx:annotation-driven/> 就是支持事务注解的（@Transactional） 、<mvc:annotation-driven> 就是支持mvc注解的，说白了就是使Controller中可以使用MVC的各种注解。-->
+    <tx:annotation-driven />
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg name="defaultCharset" value="UTF-8" />
+                <property name="supportedMediaTypes">
+                    <list>
+                        <bean class="org.springframework.http.MediaType">
+                            <constructor-arg index="0" value="text" />
+                            <constructor-arg index="1" value="plain" />
+                            <constructor-arg index="2" value="UTF-8" />
+                        </bean>
+                        <bean class="org.springframework.http.MediaType">
+                            <constructor-arg index="0" value="*" />
+                            <constructor-arg index="1" value="*" />
+                            <constructor-arg index="2" value="UTF-8" />
+                        </bean>
+                    </list>
+                </property>
+                <property name="writeAcceptCharset" value="false" />
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+</beans>

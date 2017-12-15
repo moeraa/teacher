@@ -1,0 +1,42 @@
+<!-- NOTE: If you're working offline, you might have to change the DOCTYPE to the following:
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">-->
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--<mapping class="com.lenovo.css.auth.model.AuthGrantEntry"/>-->
+        <!--<mapping class="com.lenovo.css.auth.model.User"/>-->
+        <!--<mapping class="com.lenovo.css.auth.model.Privilege"/>-->
+        <!--<mapping class="com.lenovo.css.auth.model.NameEntry"/>-->
+        <!--<mapping class="com.lenovo.css.auth.model.Namespace"/>-->
+        <!--<mapping class="com.lenovo.css.auth.model.AccountUser"/>-->
+        <!--<mapping class="com.lenovo.css.auth.model.PathInfo"/>-->
+        <!--<mapping class="com.lenovo.css.team.model.TeamUser"/>-->
+        <!--<mapping class="com.lenovo.css.team.model.Team"/>-->
+        <!--<mapping class="com.lenovo.css.ad.model.Ad"/>-->
+        <!--<mapping class="com.lenovo.css.region.model.Region"/>-->
+        <!--<mapping class="com.lenovo.css.region.model.RegionBinding"/>-->
+        <!--<mapping class="com.lenovo.css.ad.model.AdLog"/>-->
+        <!--<mapping class="com.lenovo.css.ad.model.Binding"/>-->
+        <!--<mapping class="com.lenovo.css.account.model.Account"/>-->
+        <!--<mapping class="com.lenovo.css.quota.model.Quota"/>-->
+        <!--<mapping class="com.lenovo.css.log.model.LogEntry"/>-->
+        <!--<mapping class="com.lenovo.css.log.model.CapacityLog"/>-->
+         <!--<mapping class="com.lenovo.css.log.model.UserActivityLog"/>-->
+        <!--<mapping class="com.lenovo.css.ad.model.Binding"/>-->
+        <!--<mapping class="com.lenovo.css.auth.model.AuthGrantEntry"/>-->
+        <!--<mapping class="com.lenovo.css.metadata.model.ExtraMetadata"/>-->
+        <!--<mapping class="com.lenovo.css.metadata.model.FileInfo"/>-->
+        <!--<mapping class="com.lenovo.css.account.model.Config"/>-->
+        <!--<mapping class="com.lenovo.css.notice.model.Notice"/>-->
+        <!--<mapping class="com.lenovo.css.account.model.SecuritySetting"/>-->
+        <!--<mapping class="com.lenovo.css.account.model.SensitiveWord"/>-->
+        <!--<mapping class="com.lenovo.css.account.model.FileRestriction"/>-->
+        <!--<mapping class="com.lenovo.css.bookmark.model.UserBookmark"/>-->
+        <!--<mapping class="com.lenovo.css.account.model.AccountQuota"/>-->
+        <!--<mapping class="com.lenovo.css.delivery.model.Delivery"/>-->
+        <!--<mapping class="com.lenovo.css.metadata.model.FileRegionReference"/>-->
+    </session-factory>
+</hibernate-configuration>

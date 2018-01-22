@@ -1,5 +1,7 @@
 package com.teacher.util;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.teacher.common.thread.ThreadLocalMap;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -53,6 +57,18 @@ public class PubUtil {
                 sessionList.remove(session);
             }
         }
+    }
+
+    public static void responseText(HttpServletResponse resp, Object content) throws IOException {
+        resp.setContentType("application/json; charset=utf-8");
+        String text = "";
+        if (content instanceof String) {
+            text = (String) content;
+        } else {
+            text = JSON.toJSONString(content, SerializerFeature.WriteMapNullValue,
+                    SerializerFeature.WriteNullStringAsEmpty);
+        }
+        resp.getWriter().write(text);
     }
 
 

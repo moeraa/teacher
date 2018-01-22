@@ -20,13 +20,23 @@ public class User {
     @Column(name = "usersex")
     private Integer sex;//性别
     @Column(name = "phone")
-    private Integer phone;//电话
+    private Long phone;//电话
     @Column(name = "status")
     private Integer status;//状态  用户状态：激活1、已删除-1
     @Column(name = "usersignatrue")
-    private Integer usersignatrue; //个性签名
+    private String usersignatrue; //个性签名
     @Column(name = "idNum")
-    private Integer idNum; //身份证号
+    private Long idNum; //身份证号
+    @Column(name = "userslug")
+    private String userSlug;
+
+    public String getUserSlug() {
+        return userSlug;
+    }
+
+    public void setUserSlug(String userSlug) {
+        this.userSlug = userSlug;
+    }
 
     public String getUsername() {
         return username;
@@ -52,11 +62,11 @@ public class User {
         this.sex = sex;
     }
 
-    public Integer getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
@@ -68,19 +78,19 @@ public class User {
         this.status = status;
     }
 
-    public Integer getUsersignatrue() {
+    public String getUsersignatrue() {
         return usersignatrue;
     }
 
-    public void setUsersignatrue(Integer usersignatrue) {
+    public void setUsersignatrue(String usersignatrue) {
         this.usersignatrue = usersignatrue;
     }
 
-    public Integer getIdNum() {
+    public Long getIdNum() {
         return idNum;
     }
 
-    public void setIdNum(Integer idNum) {
+    public void setIdNum(Long idNum) {
         this.idNum = idNum;
     }
 

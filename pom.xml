@@ -14,6 +14,8 @@
         <org.springframework.version>4.1.2.RELEASE</org.springframework.version>
     </properties>
 
+
+
     <!--   依赖从这开始
      <dependencies>是所有依赖包的父级标签
      其中每添加一个依赖包，就加一个<dependency>标签
@@ -22,6 +24,14 @@
      -->
     <!--项目依赖 -->
     <dependencies>
+
+
+        <dependency>
+            <groupId>com.github.vergil-ong</groupId>
+            <artifactId>ong.base</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
